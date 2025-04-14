@@ -46,4 +46,4 @@ class DrawErrorBarPlotCase(unittest.TestCase):
         gc = PlotGraphicsContext(size)
         gc.render_component(errorbar_plot)
         actual = gc.bmp_array[:, :, :]
-        self.assertFalse(alltrue(actual == 255))
+        self.assertFalse(np.all(actual == 255))

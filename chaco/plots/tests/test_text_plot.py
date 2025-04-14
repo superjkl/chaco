@@ -10,7 +10,7 @@
 
 import unittest
 
-from numpy import alltrue, arange, array
+from numpy import alltrue, arange, array, all
 
 # Chaco imports
 from chaco.api import (
@@ -63,4 +63,4 @@ class TextPlotTest(unittest.TestCase):
         gc = PlotGraphicsContext(self.size)
         gc.render_component(self.text_plot)
         actual = gc.bmp_array[:, :, :]
-        self.assertFalse(alltrue(actual == 255))
+        self.assertFalse(all(actual == 255))

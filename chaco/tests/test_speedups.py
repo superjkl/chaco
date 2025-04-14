@@ -10,7 +10,7 @@
 
 import unittest
 
-from numpy import alltrue, array, ravel, zeros, isinf, linspace
+from numpy import alltrue, array, ravel, zeros, isinf, linspace, all
 
 
 def assert_close(desired, actual):
@@ -18,7 +18,7 @@ def assert_close(desired, actual):
     diff = abs(ravel(actual) - ravel(desired))
     for d in diff:
         if not isinf(d):
-            assert alltrue(d <= diff_allowed)
+            assert all(d <= diff_allowed)
             return
 
 

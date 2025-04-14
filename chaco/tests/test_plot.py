@@ -63,7 +63,7 @@ class PlotTestCase(unittest.TestCase):
         gc = PlotGraphicsContext((250, 250))
         gc.render_component(plot)
         actual = gc.bmp_array[:, :, :]
-        self.assertFalse(alltrue(actual == 255))
+        self.assertFalse(np.all(actual == 255))
 
     def test_segment_plot_color(self):
         x = arange(10)
@@ -77,7 +77,7 @@ class PlotTestCase(unittest.TestCase):
         gc = PlotGraphicsContext((250, 250))
         gc.render_component(plot)
         actual = gc.bmp_array[:, :, :]
-        self.assertFalse(alltrue(actual == 255))
+        self.assertFalse(np.all(actual == 255))
 
     def test_segment_plot_color_width(self):
         x = arange(10)
@@ -94,7 +94,7 @@ class PlotTestCase(unittest.TestCase):
         gc = PlotGraphicsContext((250, 250))
         gc.render_component(plot)
         actual = gc.bmp_array[:, :, :]
-        self.assertFalse(alltrue(actual == 255))
+        self.assertFalse(np.all(actual == 255))
 
     def test_segment_plot_map_screen(self):
         x = arange(10)
@@ -120,7 +120,7 @@ class PlotTestCase(unittest.TestCase):
         gc = PlotGraphicsContext((250, 250))
         gc.render_component(plot)
         actual = gc.bmp_array[:, :, :]
-        self.assertFalse(alltrue(actual == 255))
+        self.assertFalse(np.all(actual == 255))
 
     def check_map_screen(self, renderer):
         arr = arange(10)

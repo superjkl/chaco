@@ -10,7 +10,7 @@
 
 import unittest
 
-from numpy import alltrue, arange, nan
+from numpy import alltrue, arange, nan, all
 
 from traits.testing.api import UnittestTools
 
@@ -71,7 +71,7 @@ class BarPlotTest(UnittestTools, unittest.TestCase):
         gc = PlotGraphicsContext(self.size)
         gc.render_component(self.barplot)
         actual = gc.bmp_array[:, :, :]
-        self.assertFalse(alltrue(actual == 255))
+        self.assertFalse(all(actual == 255))
 
     def test_barplot_horizontal(self):
         self.barplot.orientation = 'v'
@@ -95,4 +95,4 @@ class BarPlotTest(UnittestTools, unittest.TestCase):
         gc = PlotGraphicsContext(self.size)
         gc.render_component(self.barplot)
         actual = gc.bmp_array[:, :, :]
-        self.assertFalse(alltrue(actual == 255))
+        self.assertFalse(all(actual == 255))

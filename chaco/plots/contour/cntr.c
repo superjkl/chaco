@@ -31,13 +31,6 @@
 
 #ifdef NUMPY
 #include "numpy/arrayobject.h"
-# ifndef PyArray_SBYTE
-#  include "numpy/oldnumeric.h"
-#  include "numpy/old_defines.h"
-# endif
-#else
-# include "Numeric/arrayobject.h"
-# define PyArray_UBYTELTR 'b'
 #endif
 
 /* Note that all arrays in these routines are Fortran-style,

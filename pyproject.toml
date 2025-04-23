@@ -10,3 +10,7 @@ archs = "x86_64 universal2"
 
 [tool.cibuildwheel.linux]
 archs = 'x86_64 aarch64'
+
+[project]
+dynamic = ["version", "optional-dependencies", "license", "authors", "description", "maintainers", "readme", "dependencies", "entry-points", "classifiers"]
+name = "chaco"
